@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PokemonInfoRow: View {
     let model: PokemonViewModel
-    let expanded: Bool
+    @State var expanded: Bool
     
     var body: some View {
         VStack {
@@ -67,8 +67,18 @@ struct PokemonInfoRow: View {
                 
                 RoundedRectangle(cornerRadius: 20)
                     .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [.white, model.color]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
                     )
             }
+        )
+        .padding(.horizontal)
+        .animation(
+            Animation.spring(response: 0.55, dampingFraction: 0.425, blendDuration: 0),
+            value: expanded
         )
     }
 }
@@ -77,7 +87,7 @@ struct PokemonInfoRow_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             PokemonInfoRow(model: PokemonViewModel.sample(id: 1), expanded: false)
-            PokemonInfoRow(model: PokemonViewModel.sample(id: 21), expanded: false)
+            PokemonInfoRow(model: PokemonViewModel.sample(id: 21), expanded: true)
             PokemonInfoRow(model: PokemonViewModel.sample(id: 25), expanded: false)
         }
     }

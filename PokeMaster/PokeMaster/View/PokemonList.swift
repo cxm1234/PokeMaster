@@ -16,11 +16,18 @@ struct PokemonList: View {
         NavigationView {
             ScrollView {
                 SearchControl
-                
                 ForEach(PokemonViewModel.all) { pokemon in
-                    
+                    PokemonInfoRow(model: pokemon, expanded: self.expandingIndex == pokemon.id)
+                        .onTapGesture {
+                            if self.expandingIndex == pokemon.id {
+                                self.expandingIndex = nil
+                            } else {
+                                self.expandingIndex = pokemon.id
+                            }
+                        }
                 }
             }
+            .navigationTitle("宝可梦列表")
         }
     }
 }
