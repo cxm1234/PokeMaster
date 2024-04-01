@@ -80,7 +80,26 @@ extension PokemonInfoPanel {
                 .opacity(0.1)
         }
         
-//        var body
+        var bodyStatus: some View {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("身高")
+                        .foregroundColor(Color.gray)
+                        .font(.system(size: 11))
+                    Text(model.height)
+                        .foregroundColor(model.color)
+                        .font(.system(size: 11))
+                }
+                HStack {
+                    Text("体重")
+                        .foregroundColor(Color.gray)
+                        .font(.system(size: 11))
+                    Text(model.weight)
+                        .foregroundColor(model.color)
+                        .font(.system(size: 11))
+                }
+            }
+        }
     }
 }
 
