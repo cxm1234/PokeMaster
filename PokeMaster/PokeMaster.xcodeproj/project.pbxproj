@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A7C08072BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */; };
 		3A810FE62BB50F38000F9F6C /* ability-34.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A810FA42BB50F38000F9F6C /* ability-34.json */; };
 		3A810FE72BB50F38000F9F6C /* ability-65.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A810FA52BB50F38000F9F6C /* ability-65.json */; };
 		3A810FE82BB50F38000F9F6C /* pokemon-1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A810FA72BB50F38000F9F6C /* pokemon-1.json */; };
@@ -88,6 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelAbilityList.swift; sourceTree = "<group>"; };
 		3A810FA42BB50F38000F9F6C /* ability-34.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ability-34.json"; sourceTree = "<group>"; };
 		3A810FA52BB50F38000F9F6C /* ability-65.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ability-65.json"; sourceTree = "<group>"; };
 		3A810FA72BB50F38000F9F6C /* pokemon-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pokemon-1.json"; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				3A8110262BB5105E000F9F6C /* PokemonList.swift */,
 				3A9A2E382BBA8CFC00C59112 /* PokemonInfoRow.swift */,
 				3A9A2E3E2BBA9B2500C59112 /* PokemonInfoPanel.swift */,
+				3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				3A9A2E362BBA695E00C59112 /* Sample.swift in Sources */,
 				3A9A2E342BBA679400C59112 /* FileHelper.swift in Sources */,
 				3ABE8D942BA9378C00020963 /* PokeMasterApp.swift in Sources */,
+				3A7C08072BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift in Sources */,
 				3A81102A2BB5191A000F9F6C /* PokemonViewModel.swift in Sources */,
 				3A9A2E3B2BBA914D00C59112 /* Ability.swift in Sources */,
 				3A8110272BB5105E000F9F6C /* PokemonList.swift in Sources */,

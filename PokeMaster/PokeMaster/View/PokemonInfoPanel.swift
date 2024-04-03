@@ -33,8 +33,17 @@ struct PokemonInfoPanel: View {
                 Text("切换模糊效果")
             })
             
+            Header(model: model)
             
+            pokemonDescription
+                .padding(.horizontal)
+            
+            PokemonInfoPanelAbilityList(model: model, abilityModels: AbilityViewModel.sample(pokemonID: model.id))
+                .padding(.horizontal)
+            
+            Spacer()
         }
+        
     }
 }
 
@@ -43,7 +52,14 @@ extension PokemonInfoPanel {
         let model: PokemonViewModel
         var body: some View {
             HStack(spacing: 18) {
+                pokemonIcon
+                nameSpecies
+                verticalDivider
                 
+                VStack(spacing: 12) {
+                    bodyStatus
+                    typeInfo
+                }
             }
         }
         
@@ -97,6 +113,22 @@ extension PokemonInfoPanel {
                     Text(model.weight)
                         .foregroundColor(model.color)
                         .font(.system(size: 11))
+                }
+            }
+        }
+        
+        var typeInfo: some View {
+            HStack {
+                ForEach(model.types) { type in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(type.color)
+                        
+                        Text(type.name)
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 10))
+                    }
+                    .frame(width: 36, height: 14)
                 }
             }
         }
