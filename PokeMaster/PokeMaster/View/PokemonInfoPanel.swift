@@ -43,6 +43,9 @@ struct PokemonInfoPanel: View {
             
             Spacer()
         }
+        .blurBackground(style: darkBlur ? .systemMaterialDark : .systemMaterial)
+        .cornerRadius(20)
+        .fixedSize(horizontal: false, vertical: true)
         
     }
 }
