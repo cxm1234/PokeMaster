@@ -27,23 +27,24 @@ struct PokemonInfoPanel: View {
             topIndicator
                 .padding()
             
-            Button(action: {
-                self.darkBlur.toggle()
-            }, label: {
-                Text("切换模糊效果")
-            })
-            
             Header(model: model)
             
             pokemonDescription
                 .padding(.horizontal)
             
-            PokemonInfoPanelAbilityList(model: model, abilityModels: AbilityViewModel.sample(pokemonID: model.id))
-                .padding(.horizontal)
+            Divider()
             
+            AbilityList(
+                model: model,
+                abilityModels: abilities
+            )
+
             Spacer()
         }
-        .blurBackground(style: darkBlur ? .systemMaterialDark : .systemMaterial)
+        .padding(
+            EdgeInsets(top: 12, leading: 30, bottom: 30, trailing: 30)
+        )
+        .blurBackground(style: .systemMaterial)
         .cornerRadius(20)
         .fixedSize(horizontal: false, vertical: true)
         

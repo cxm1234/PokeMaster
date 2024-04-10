@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PokemonInfoRow: View {
     let model: PokemonViewModel
-    @State var expanded: Bool
+    let expanded: Bool
     
     var body: some View {
         VStack {
@@ -34,37 +34,42 @@ struct PokemonInfoRow: View {
             Spacer()
             HStack(spacing: expanded ? 20 : -30) {
                 Spacer()
-                Button(action: {
-                    print("fav")
-                }, label: {
+                Button(
+                    action: {
+                        print("fav")
+                    }
+                ) {
                     Image(systemName: "star")
                         .modifier(ToolButtonModifier())
-                })
-                Button(action: {
-                    print("panel")
-                }, label: {
+                }
+                Button(
+                    action: {
+                        print("panel")
+                    }
+                ) {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())
-                })
-                Button(action: {
-                    print("web")
-                }, label: {
+                }
+                Button(
+                    action: {
+                        print("web")
+                    }
+                ) {
                     Image(systemName: "info.circle")
                         .modifier(ToolButtonModifier())
-                })
+                }
             }
             .padding(.bottom, 12)
             .opacity(expanded ? 1.0 : 0.0)
-            .frame(maxWidth: expanded ? .infinity : 0)
+            .frame(maxHeight: expanded ? .infinity : 0)
         }
-        .frame(maxHeight: expanded ? 120 : 80)
+        .frame(height: expanded ? 120 : 80)
         .padding(.leading, 23)
         .padding(.trailing, 15)
         .background(
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(model.color, style: StrokeStyle(lineWidth: 4))
-                
                 RoundedRectangle(cornerRadius: 20)
                     .fill(
                         LinearGradient(
@@ -76,10 +81,6 @@ struct PokemonInfoRow: View {
             }
         )
         .padding(.horizontal)
-        .animation(
-            Animation.spring(response: 0.55, dampingFraction: 0.425, blendDuration: 0),
-            value: expanded
-        )
     }
 }
 

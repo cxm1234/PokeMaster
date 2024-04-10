@@ -13,22 +13,28 @@ struct PokemonList: View {
     @State var searchContent: String = ""
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                SearchControl
-                ForEach(PokemonViewModel.all) { pokemon in
-                    PokemonInfoRow(model: pokemon, expanded: self.expandingIndex == pokemon.id)
-                        .onTapGesture {
-                            if self.expandingIndex == pokemon.id {
-                                self.expandingIndex = nil
-                            } else {
-                                self.expandingIndex = pokemon.id
-                            }
+        ScrollView {
+            ForEach(PokemonViewModel.all) { pokemon in
+                PokemonInfoRow(
+                    model: pokemon,
+                    expanded: self.expandingIndex == pokemon.id)
+                .onTapGesture {
+                    withAnimation(.spring(response: 0.55, dampingFraction: 0.425, blendDuration: 0)) {
+                        if self.expandingIndex == pokemon.id {
+                            self.expandingIndex = nil
+                        } else {
+                            self.expandingIndex = pokemon.id
                         }
+                    }
                 }
             }
-            .navigationTitle("宝可梦列表")
         }
+        .overlay(
+            VStack {
+                Spacer()
+                PokemonInfoPanel(model: .sample(id: 1))
+            }.edgesIgnoringSafeArea(.bottom)
+        )
     }
 }
 
