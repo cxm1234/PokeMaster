@@ -8,7 +8,14 @@
 import SwiftUI
 
 struct SettingView: View {
-    @ObservedObject var settings = Settings()
+    @EnvironmentObject var store: Store
+    var settingsBinding: Binding<AppState.Settings> {
+        $store.appState.settings
+    }
+    
+    var settings: AppState.Settings {
+        store.appState.settings
+    }
     
     var body: some View {
         Form {
@@ -21,8 +28,8 @@ struct SettingView: View {
     var accountSection: some View {
         Section(header: Text("账户")) {
             Picker(
-                selection: $settings.accountBehavior) {
-                    ForEach(Settings.AccountBehavior.allCases, id: \.self) {
+                selection: settingsBinding.accountBehavior) {
+                    ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
                         Text($0.text)
                     }
                 } label: {
@@ -30,11 +37,11 @@ struct SettingView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
             
-            TextField("电子邮箱", text: $settings.email)
-            SecureField("密码", text: $settings.password)
+            TextField("电子邮箱", text: settingsBinding.email)
+            SecureField("密码", text: settingsBinding.password)
             
             if settings.accountBehavior == .register {
-                SecureField("确认密码", text: $settings.verifyPassword)
+                SecureField("确认密码", text: settingsBinding.verifyPassword)
             }
             
             Button(settings.accountBehavior.text) {
@@ -47,20 +54,20 @@ struct SettingView: View {
     var optionSection: some View {
         Section(header: Text("选项")) {
             
-            Toggle(isOn: $settings.showEnglishName) {
+            Toggle(isOn: settingsBinding.showEnglishName) {
                 Text("显示英文名")
             }
             
             Picker(
-                selection: $settings.soring) {
-                    ForEach(Settings.Sorting.allCases, id: \.self) {
+                selection: settingsBinding.sorting) {
+                    ForEach(AppState.Settings.Sorting.allCases, id: \.self) {
                         Text($0.text)
                     }
                 } label: {
                     Text("排序方式")
                 }
             
-            Toggle(isOn: $settings.showFavoriteOnly) {
+            Toggle(isOn: settingsBinding.showEnglishName) {
                 Text("只显示收藏")
             }
 
@@ -103,7 +110,7 @@ class Settings : ObservableObject {
     
 }
 
-extension Settings.Sorting {
+extension AppState.Settings.Sorting {
     var text: String {
         switch self {
         case .id:
@@ -118,7 +125,7 @@ extension Settings.Sorting {
     }
 }
 
-extension Settings.AccountBehavior {
+extension AppState.Settings.AccountBehavior {
     var text: String {
         switch self {
         case .register:
