@@ -23,29 +23,49 @@ struct SettingView: View {
             optionSection
             actionSection
         }
+        .alert(item: settingsBinding.loginError) { error in
+            Alert(title: Text(error.localizedDescription))
+        }
     }
     
     var accountSection: some View {
         Section(header: Text("账户")) {
-            Picker(
-                selection: settingsBinding.accountBehavior) {
-                    ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
-                        Text($0.text)
+            if settings.loginUser == nil {
+                Picker(
+                    selection: settingsBinding.accountBehavior) {
+                        ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
+                            Text($0.text)
+                        }
+                    } label: {
+                        Text("")
                     }
-                } label: {
-                    Text("")
+                    .pickerStyle(SegmentedPickerStyle())
+                
+                TextField("电子邮箱", text: settingsBinding.email)
+                SecureField("密码", text: settingsBinding.password)
+                
+                if settings.loginRequesting {
+                    Text("登录中...")
+                } else {
+                    Button(settings.accountBehavior.text) {
+                        self.store.dispatch(
+                            .login(
+                                email: self.settings.email,
+                                password: self.settings.password
+                            )
+                        )
+                    }
+                    if settings.accountBehavior == .register {
+                        SecureField("确认密码", text: settingsBinding.verifyPassword)
+                    }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-            
-            TextField("电子邮箱", text: settingsBinding.email)
-            SecureField("密码", text: settingsBinding.password)
-            
-            if settings.accountBehavior == .register {
-                SecureField("确认密码", text: settingsBinding.verifyPassword)
-            }
-            
-            Button(settings.accountBehavior.text) {
-                print("登陆/注册")
+                
+
+            } else {
+                Text(settings.loginUser!.email)
+                Button("注销") {
+                    print("注销")
+                }
             }
             
         }

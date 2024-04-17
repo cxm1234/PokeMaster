@@ -29,6 +29,11 @@ extension AppState {
         var email = ""
         var password = ""
         var verifyPassword = ""
+        
+        @FileStorage(directory: .documentDirectory, fileName: "user.json")
+        var loginUser: User?
+        var loginRequesting: Bool = false
+        var loginError: AppError?
     }
     
 }
