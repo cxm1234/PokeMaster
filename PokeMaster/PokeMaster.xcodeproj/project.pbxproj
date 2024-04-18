@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2CD8A12BD0B319000919A4 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2CD8A02BD0B319000919A4 /* EmailCheckingRequest.swift */; };
 		3A7C08072BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */; };
 		3A810FE62BB50F38000F9F6C /* ability-34.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A810FA42BB50F38000F9F6C /* ability-34.json */; };
 		3A810FE72BB50F38000F9F6C /* ability-65.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A810FA52BB50F38000F9F6C /* ability-65.json */; };
@@ -103,6 +104,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2CD8A02BD0B319000919A4 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelAbilityList.swift; sourceTree = "<group>"; };
 		3A810FA42BB50F38000F9F6C /* ability-34.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ability-34.json"; sourceTree = "<group>"; };
 		3A810FA52BB50F38000F9F6C /* ability-65.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ability-65.json"; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				3AD4001E2BCF69C700811B42 /* AppError.swift */,
 				3AD400202BCF6A8000811B42 /* AppCommand.swift */,
 				3AD400222BCF6D5900811B42 /* SubscriptionToken.swift */,
+				3A2CD8A02BD0B319000919A4 /* EmailCheckingRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				3A9A2E3D2BBA922E00C59112 /* AbilityViewModel.swift in Sources */,
 				3A9A2E3F2BBA9B2500C59112 /* PokemonInfoPanel.swift in Sources */,
 				3AC869E82BCE69F600FCB7A5 /* AppState.swift in Sources */,
+				3A2CD8A12BD0B319000919A4 /* EmailCheckingRequest.swift in Sources */,
 				3A8110312BB5456D000F9F6C /* Language.swift in Sources */,
 				3AD400212BCF6A8000811B42 /* AppCommand.swift in Sources */,
 				3A9A2E362BBA695E00C59112 /* Sample.swift in Sources */,
