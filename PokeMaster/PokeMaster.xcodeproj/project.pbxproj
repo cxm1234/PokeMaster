@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2754F42C02DFCE005B9770 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2754F32C02DFCE005B9770 /* LoadPokemonRequest.swift */; };
 		3A2CD8A12BD0B319000919A4 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2CD8A02BD0B319000919A4 /* EmailCheckingRequest.swift */; };
 		3A7C08072BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */; };
 		3A810FE62BB50F38000F9F6C /* ability-34.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A810FA42BB50F38000F9F6C /* ability-34.json */; };
@@ -104,6 +105,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2754F32C02DFCE005B9770 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
 		3A2CD8A02BD0B319000919A4 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		3A7C08062BBCD4F400E0C045 /* PokemonInfoPanelAbilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelAbilityList.swift; sourceTree = "<group>"; };
 		3A810FA42BB50F38000F9F6C /* ability-34.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ability-34.json"; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				3A9A2E352BBA695E00C59112 /* Sample.swift */,
 				3A9A2E312BBA642800C59112 /* Helpers.swift */,
 				3AD400242BCF74F400811B42 /* FileStorage.swift */,
+				3A2754F32C02DFCE005B9770 /* LoadPokemonRequest.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				3AD400252BCF74F400811B42 /* FileStorage.swift in Sources */,
 				3AD4001F2BCF69C700811B42 /* AppError.swift in Sources */,
 				3ABE8D962BA9378C00020963 /* ContentView.swift in Sources */,
+				3A2754F42C02DFCE005B9770 /* LoadPokemonRequest.swift in Sources */,
 				3AA32DBF2BC5541700D6727D /* SettingView.swift in Sources */,
 				3A9A2E392BBA8CFC00C59112 /* PokemonInfoRow.swift in Sources */,
 				3A9A2E322BBA642800C59112 /* Helpers.swift in Sources */,

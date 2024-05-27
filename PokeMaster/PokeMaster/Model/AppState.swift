@@ -73,7 +73,7 @@ extension AppState {
         var loginRequesting: Bool = false
         var loginError: AppError?
         
-        
+        var isEmailValid: Bool = false 
     }
     
 }
