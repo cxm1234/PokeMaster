@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct PokemonInfoRow: View {
+    @EnvironmentObject var store: Store
     let model: PokemonViewModel
     let expanded: Bool
     
